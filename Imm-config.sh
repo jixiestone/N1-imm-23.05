@@ -60,6 +60,7 @@ CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-vlmcsd-zh-cn=y
 
 # other packages
+CONFIG_PACKAGE_adguardhome=y
 CONFIG_PACKAGE_autocore=y
 CONFIG_PACKAGE_fstrim=y
 CONFIG_PACKAGE_smartdns=y
