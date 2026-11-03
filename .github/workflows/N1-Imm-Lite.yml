@@ -29,10 +29,9 @@ env:
 jobs:
   build_openwrt:
     name: Build OpenWrt and release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
-
     - name: Free Disk Space (Ubuntu)
       uses: jlumbroso/free-disk-space@main
       with:
@@ -49,10 +48,17 @@ jobs:
         swap-storage: true
 
     - name: Checkout
-      uses: actions/checkout@v3.1.0
+      uses: actions/checkout@v6
       with:
         ref: main
-
+    - uses: actions/setup-node@v6
+      with:
+        node-version: '24'
+    - uses: actions/setup-go@v6
+      with:
+        go-version: '1.25' # The Go version to download (if necessary) and use.
+        cache: false  
+    
     - name: Disk space
       run: |
            echo "Free space:"
